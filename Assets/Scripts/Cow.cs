@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Cow : MonoBehaviour,IDataPersistence
 {
@@ -9,7 +11,7 @@ public class Cow : MonoBehaviour,IDataPersistence
     public Poop poop;
     public PoopDiamond poopDiamond;
     public bool isDragged , hasDestination;
-    Vector3 offSet , destination;
+    Vector3 offSet , destination , offSetHat;
 
     public bool eatBerry = false;
 
@@ -17,9 +19,13 @@ public class Cow : MonoBehaviour,IDataPersistence
     
     private SpriteRenderer spriteRenderer;
 
+    public Transform hatPosition;
+    private GameObject currentHat;
     // Start is called before the first frame update
     void Start()
     {
+        
+        AnimationCow();
         DataPersistenceManager.Instance.Register(this);
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetCow();
@@ -29,7 +35,13 @@ public class Cow : MonoBehaviour,IDataPersistence
     // Update is called once per frame
     void Update()
     {
-        
+        if (tier >= 6&& tier<=12)
+        {
+            gameObject.GetComponent<SortingGroup>().sortingOrder = 1;
+        }else if(tier > 12)
+        {
+            gameObject.GetComponent<SortingGroup>().sortingOrder = 2;
+        }
         if (!isDragged)
         {
             if(hasDestination)
@@ -40,11 +52,22 @@ public class Cow : MonoBehaviour,IDataPersistence
                     Vector3 direction = destination - transform.position;
                     if (direction.x > 0)
                     {
-                        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                        /*transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);*/
+                        spriteRenderer.flipX = false;
+                        if(currentHat != null)
+                        {
+                            hatPosition.localScale = Vector3.one;
+                        }
                     }
                     else if (direction.x < 0)
                     {
-                        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+
+                        /*transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);*/
+                        spriteRenderer.flipX = true;
+                        if (currentHat != null)
+                        {
+                            hatPosition.localScale = new Vector3(-1,1,1);
+                        }
                     }
                     if (tier >= 6 && tier <=11)
                     {
@@ -90,7 +113,12 @@ public class Cow : MonoBehaviour,IDataPersistence
         }
         CheckColor();
     }
-
+    public void AnimationCow()
+    {
+        Vector3 targetScale = new Vector3(1.25f, 1.25f, 1);
+        float duration = 1f;
+        transform.DOScale(targetScale, duration).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+    }
     public void CheckColor()
     {
         if(ChangeColorCow.Instance != null)
@@ -173,6 +201,8 @@ public class Cow : MonoBehaviour,IDataPersistence
     
     public void SetCow()
     {
+        hatPosition.localScale = Vector3.one;
+        EquipHatOnSpawn();
         GetComponent<SpriteRenderer>().sprite = GameManager.Instance.cow_Sprites[tier];   
         poopTier = tier;
     }
@@ -193,6 +223,7 @@ public class Cow : MonoBehaviour,IDataPersistence
             AudioManager.Instance.PlayEvolveSound();
         }
         tier++;
+        UpdateHatOnLevelChange(tier);
         GameManager.Instance.CheckTier(tier);
         SetCow();
     }
@@ -236,6 +267,7 @@ public class Cow : MonoBehaviour,IDataPersistence
             AudioManager.Instance.PlayPoopSound();
         }  
         Poop newPoop = Instantiate(poop,transform.position,Quaternion.identity);
+        newPoop.GetComponent<SpriteRenderer>().sortingOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder;
         newPoop.pos = transform;
         int index = Random.Range(0, 2);
         if (tier >= 6)
@@ -270,6 +302,7 @@ public class Cow : MonoBehaviour,IDataPersistence
     private void OnMouseDown()
     {
         offSet = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        Take_Poop();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -303,21 +336,165 @@ public class Cow : MonoBehaviour,IDataPersistence
         }
     }
 
+
+    private void EquipHatOnSpawn()
+    {
+        Hat hat = HatManager.Instance.GetHatForLevel(tier);
+        if (hat != null && hat.hatPrefab != null)
+        {
+            EquipHat(hat.hatPrefab);
+        }
+    }
+
+    public void EquipHat(GameObject hatPrefab)
+    {
+        RemoveCurrentHat();
+        if (hatPrefab != null)
+        {
+            currentHat = Instantiate(hatPrefab, hatPosition.position + SetHatPosition(tier), Quaternion.identity, hatPosition);
+        }
+
+    }
+
+    public void RemoveCurrentHat()
+    {
+        if (currentHat != null)
+        {
+            Destroy(currentHat);
+            currentHat = null;
+        }
+    }
+
+    public bool HasHat()
+    {
+        return currentHat != null;
+    }
+
+    public void UpdateHatOnLevelChange(int newTier)
+    {
+        RemoveCurrentHat();
+
+        // Update tier
+        tier = newTier;
+
+        // Equip new hat based on the new tier
+        Hat hat = HatManager.Instance.GetHatForLevel(tier);
+        if (hat != null && hat.hatPrefab != null)
+        {
+            EquipHat(hat.hatPrefab);
+        }
+       
+    }
+
+    
+
+
+    public Vector3 SetHatPosition(int level)
+    {
+        if (tier == 0)
+        {
+            offSetHat = new Vector3(0.13f,0.2f,0);
+            return offSetHat;
+        }
+        if (tier == 1)
+        {
+            offSetHat = new Vector3(0.18f, 0.24f, 0);
+            return offSetHat;
+        }
+        if (tier == 2)
+        {
+            offSetHat = new Vector3(0.12f, 0.26f, 0);
+            return offSetHat;
+        }
+        if (tier == 3)
+        {
+            offSetHat = new Vector3(0.22f, 0.23f, 0);
+            return offSetHat;
+        }
+        if (tier == 4)
+        {
+            offSetHat = new Vector3(0, 0.39f, 0);
+            return offSetHat;
+        }
+        if (tier == 5)
+        {
+            offSetHat = new Vector3(0.03f, 0.42f, 0);
+            return offSetHat;
+        }
+        if (tier == 6)
+        {
+            offSetHat = new Vector3(0, 0.36f, 0);
+            return offSetHat;
+        }
+        if (tier == 7)
+        {
+            offSetHat = new Vector3(0, 0.5f, 0);
+            return offSetHat;
+        }
+        if (tier == 8)
+        {
+            offSetHat = new Vector3(0.346f, 0.6f, 0);
+            return offSetHat;
+        }
+        if (tier == 9)
+        {
+            offSetHat = new Vector3(0, 0.2f, 0);
+            return offSetHat;
+        }
+        if (tier == 10)
+        {
+            offSetHat = new Vector3(0.16f, 0.6f, 0);
+            return offSetHat;
+        }
+        if (tier == 11)
+        {
+            offSetHat = new Vector3(0, 0.5f, 0);
+            return offSetHat;
+        }
+        if (tier == 12)
+        {
+            offSetHat = new Vector3(0, 0.24f, 0);
+            return offSetHat;
+        }
+        if (tier == 13)
+        {
+            offSetHat = new Vector3(0, 0.6f, 0);
+            return offSetHat;
+        }
+        if (tier == 14)
+        {
+            offSetHat = new Vector3(0, 0.65f, 0);
+            return offSetHat;
+        }
+        if (tier == 15)
+        {
+            offSetHat = new Vector3(0.05f, 0.63f, 0);
+            return offSetHat;
+        }
+        if (tier == 16)
+        {
+            offSetHat = new Vector3(0, 0.22f, 0);
+            return offSetHat;
+        }
+        if (tier == 17)
+        {
+            offSetHat = new Vector3(0.34f, 0.55f, 0);
+            return offSetHat;
+        }
+        return offSetHat;
+    }
+
+
+
     public void LoadData(GameData data)
     {
-        /*foreach (CowData cowData in data.cows)
-        {
-            tier = cowData.tiers;
-            poopTier = cowData.poopTiers;
-            speed = cowData.speeds;
-        }*/
+        
     }
 
     public void SaveData(GameData data)
     {
         if (this == null)
         {
-            Debug.LogWarning("Attempted to save a Cow object that has been destroyed.");
             return;
         }
         CowData cowData = new CowData
@@ -329,4 +506,5 @@ public class Cow : MonoBehaviour,IDataPersistence
         };
         data.cows.Add(cowData);
     }
+
 }

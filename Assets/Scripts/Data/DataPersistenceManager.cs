@@ -23,7 +23,7 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         dataPersistences = new List<IDataPersistence>();
-        saveFilePath = Path.Combine(Application.persistentDataPath, "/gamedata.json");
+        saveFilePath = Path.Combine(Application.persistentDataPath, "gamedata.json");
     }
 
     public void Register(IDataPersistence dataPersistence)
@@ -36,7 +36,6 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log(saveFilePath);
         GameData data = new GameData();
         foreach (IDataPersistence dataPersistence in dataPersistences)
         {
@@ -55,7 +54,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-
+        Debug.Log(saveFilePath);
         if (File.Exists(saveFilePath))
         {
             using (StreamReader reader = new StreamReader(saveFilePath))

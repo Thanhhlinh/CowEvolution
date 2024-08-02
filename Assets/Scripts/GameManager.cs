@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour,IDataPersistence
     // Update is called once per frame
     void Update()
     {
+        DataPersistenceManager.Instance.SaveGame();
         CheckUnBoxEvolutionBar();
         CheckTreeBerrySpawn();
         CheckCrateSpawn();
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour,IDataPersistence
 
     public void SpawnCrate()
     { 
-        Vector3 position = new Vector3(Random.Range(fence.bounds.center.x - 3.3f, fence.bounds.center.x + 3f), Random.Range(fence.bounds.center.y - 4.5f, fence.bounds.center.y + 4.7f), 0);
+        Vector3 position = new Vector3(Random.Range(fence.bounds.center.x - 3.3f, fence.bounds.center.x + 3f), 9, 0);
         Instantiate(crate_Prefab, position, Quaternion.identity);
         fillCrateImage.fillAmount = 0;
         fillCrateImage.DOKill();

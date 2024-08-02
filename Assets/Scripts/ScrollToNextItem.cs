@@ -15,11 +15,20 @@ public class ScrollToNextItem : MonoBehaviour
 
     private void Update()
     {
-        ChangeColorCow.Instance.colorCowIndex = currentItemIndex;
+        HatSelector.currentCowLevel = currentItemIndex;
+        if(ChangeColorCow.Instance != null)
+        {
+            ChangeColorCow.Instance.colorCowIndex = currentItemIndex;
+        }
+        if (currentItemIndex == 1)
+        {
+            content.gameObject.transform.parent.transform.Find("LeftBTN").gameObject.SetActive(true);
+        }
         if (currentItemIndex == 0)
         {
             content.gameObject.transform.parent.transform.Find("LeftBTN").gameObject.SetActive(false);
-        }else if (currentItemIndex == numberOfItems )
+        }
+        else if (currentItemIndex == numberOfItems )
         {
             content.gameObject.transform.parent.transform.Find("RightBTN").gameObject.SetActive(false);
         }

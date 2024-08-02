@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChangeColorCow : MonoBehaviour
 {
     public static ChangeColorCow Instance { get; private set; }
-    public GameObject changeColorUI;
     public Color[] colorCow;
     public Color[] changeColor;
     public int colorCowIndex =0;
@@ -43,15 +42,7 @@ public class ChangeColorCow : MonoBehaviour
         
     }
 
-    public void OpenClose_ChangeColor()
-    {
-        if (AudioManager.Instance.soundEffectToggle.isOn)
-        {
-            AudioManager.Instance.PlayCloseSound();
-        }
-        
-        changeColorUI.SetActive(!changeColorUI.activeSelf);
-    }
+    
 
     public void ChangeColorWhite()
     {
