@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tier: 11
   poopTier: 4
-  speed: 2
+  speed: 1
   evolveEffect: {fileID: 8680514409656150429}
   poop: {fileID: 5649135852698954692, guid: 23f6dc9355174da4f9cb2864ba40f66f, type: 3}
   poopDiamond: {fileID: 8164390369683988479, guid: 12dd64854ccc78844ae76bc567a035d5, type: 3}

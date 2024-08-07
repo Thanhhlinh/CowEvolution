@@ -8,21 +8,24 @@ using UnityEngine.UI;
 public class HatSelector : MonoBehaviour
 {
     public Hat[] hats; // Danh sách các mũ
-    public TextMeshProUGUI[] costTexts; // Giá tiền của mũ
-    public TextMeshProUGUI[] usedHatText; // số lượng mũ sử dụng
-    public Button[] usedHatBTN;
-    public Button[] buyHatBTN;
     public Button removeHatButton; // Button để gỡ mũ
     public static int currentCowLevel =0; // Cấp độ bò hiện tại
 
+    private GameManager gameManager;
+    private HatManager hatManager;
+    private HatUIUpdate hatUIUpdate;
+
     void Start()
     {
-        UpdateStartUI();
+        gameManager = GameManager.Instance;
+        hatManager = HatManager.Instance;
+        hatUIUpdate = GetComponent<HatUIUpdate>();
+        hatUIUpdate.UpdateStartUI(hats);
     }
 
     private void Update()
     {
-        UpdateUsedHatTextUI();
+        hatUIUpdate.UpdateUsedHatTextUI(hats, gameManager.coins);
     }
 
     public void BuyHat(int index)
@@ -30,14 +33,11 @@ public class HatSelector : MonoBehaviour
         if (index >= 0 && index < hats.Length)
         {
             Hat selectedHat = hats[index];
-            if (GameManager.Instance.coins >= selectedHat.cost)
+            if (gameManager.coins >= selectedHat.cost)
             {
                 selectedHat.currentHat++;
-                GameManager.Instance.SpendCoins(-selectedHat.cost);
-                for (int i = 0; i < hats.Length; i++)
-                {
-                    usedHatText[i].text = hats[i].hatUsed.ToString() + "/" + hats[i].currentHat.ToString();
-                }
+                gameManager.SpendCoins(-selectedHat.cost);
+                hatUIUpdate.UpdateUsedHatText(hats);
             }
         }
     }
@@ -59,19 +59,16 @@ public class HatSelector : MonoBehaviour
             }
             if (hasHat)
             {
-                HatManager.Instance.GetHatForLevel(currentCowLevel).hatUsed--;
+                hatManager.GetHatForLevel(currentCowLevel).hatUsed--;
             }
 
             foreach (Cow cow in cows)
             {
                 cow.EquipHat(selectedHat.hatPrefab);
             }
-            for (int i = 0; i < hats.Length; i++)
-            {
-                usedHatText[i].text = hats[i].hatUsed.ToString() + "/" + hats[i].currentHat.ToString();
-            }
+            hatUIUpdate.UpdateUsedHatText(hats);
             // Cập nhật thông tin mũ cho cấp độ
-            HatManager.Instance.SetHatForLevel(currentCowLevel, selectedHat);
+            hatManager.SetHatForLevel(currentCowLevel, selectedHat);
         }
     }
 
@@ -87,89 +84,16 @@ public class HatSelector : MonoBehaviour
             cow.RemoveCurrentHat();
         }
         if(hasHat) {
-            HatManager.Instance.GetHatForLevel(currentCowLevel).hatUsed--;
-            for (int i = 0; i < hats.Length; i++)
-            {
-                usedHatText[i].text = hats[i].hatUsed.ToString() + "/" + hats[i].currentHat.ToString();
-            }
-        }else if(HatManager.Instance.GetHatForLevel(currentCowLevel) != null)
+            hatManager.GetHatForLevel(currentCowLevel).hatUsed--;
+            hatUIUpdate.UpdateUsedHatText(hats);
+        }
+        else if(hatManager.GetHatForLevel(currentCowLevel) != null)
         {
-            HatManager.Instance.GetHatForLevel(currentCowLevel).hatUsed--;
-            for (int i = 0; i < hats.Length; i++)
-            {
-                usedHatText[i].text = hats[i].hatUsed.ToString() + "/" + hats[i].currentHat.ToString();
-            }
+            hatManager.GetHatForLevel(currentCowLevel).hatUsed--;
+            hatUIUpdate.UpdateUsedHatText(hats);
         }
         // Xóa thông tin mũ cho cấp độ hiện tại
-        HatManager.Instance.RemoveHatForLevel(currentCowLevel);
+        hatManager.RemoveHatForLevel(currentCowLevel);
     }
 
-    void UpdateStartUI()
-    {
-        for (int i = 0; i < hats.Length; i++)
-        {
-            costTexts[i].text = hats[i].cost.ToString();
-        }
-        for (int i = 0; i < hats.Length; i++)
-        {
-            usedHatText[i].text = hats[i].hatUsed.ToString() + "/" + hats[i].currentHat.ToString();
-        }
-    }
-
-    void UpdateUsedHatTextUI()
-    {
-        if(GameManager.Instance.coins>= hats[0].cost)
-        {
-            buyHatBTN[0].interactable = true;
-        }
-        else
-        {
-            buyHatBTN[0].interactable = false;
-        }
-
-        if (GameManager.Instance.coins >= hats[1].cost)
-        {
-            buyHatBTN[1].interactable = true;
-        }
-        else
-        {
-            buyHatBTN[1].interactable = false;
-        }
-
-        if (GameManager.Instance.coins >= hats[2].cost)
-        {
-            buyHatBTN[2].interactable = true;
-        }
-        else
-        {
-            buyHatBTN[2].interactable = false;
-        }
-
-        if (hats[0].hatUsed < hats[0].currentHat)
-        {
-            usedHatBTN[0].interactable = true;
-        }
-        else
-        {
-            usedHatBTN[0].interactable = false;
-        }
-
-        if (hats[1].hatUsed < hats[1].currentHat)
-        {
-            usedHatBTN[1].interactable = true;
-        }
-        else
-        {
-            usedHatBTN[1].interactable = false;
-        }
-
-        if (hats[2].hatUsed < hats[2].currentHat)
-        {
-            usedHatBTN[2].interactable = true;
-        }
-        else
-        {
-            usedHatBTN[2].interactable = false;
-        }
-    }
 }

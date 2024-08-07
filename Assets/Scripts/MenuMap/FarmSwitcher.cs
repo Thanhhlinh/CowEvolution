@@ -5,6 +5,7 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class FarmSwitcher : MonoBehaviour
 {
     public GameObject farmSelectedUI;
@@ -17,13 +18,9 @@ public class FarmSwitcher : MonoBehaviour
     public Transform[] farms; // Các trang trại
 
     private int selectedFarmIndex = 0;
-    private bool isMenuOpen = false;
+    public bool isMenuOpen = false;
     private float transitionDuration = 0.5f; // Thời gian chuyển đổi
     public Image selectedFarmImage;
-    void Start()
-    {
-
-    }
 
     public void OpenMenu()
     {
@@ -38,18 +35,116 @@ public class FarmSwitcher : MonoBehaviour
         isMenuOpen = false;
         farmMenu.SetActive(false);
         farmSelectedUI.SetActive(true);
+
         UpdateSelectedFarmImage();
     }
 
     public void SelectFarm(int index)
     {
         if (selectedFarmIndex != index)
-        {  
+        {
             StartCoroutine(TransitionToFarm(index));
         }
     }
+    private IEnumerator TransitionToFarm(int newFarmIndex)
+    {
+        ShowSelectionArrow(newFarmIndex);
+        if (selectedFarmIndex == newFarmIndex)
+        {
 
-    IEnumerator TransitionToFarm(int newFarmIndex)
+        }
+        else if (selectedFarmIndex < newFarmIndex)
+        {
+            yield return ScaleFarmDown(newFarmIndex);
+        }
+        else
+        {
+            yield return ScaleFarmUp(newFarmIndex);
+        }
+
+        MoveCameraToFarm(newFarmIndex);
+
+        selectedFarmIndex = newFarmIndex;
+    }
+
+    private void ShowSelectionArrow(int newFarmIndex)
+    {
+        selectionArrow.gameObject.SetActive(true);
+        Vector3 startArrowPosition = selectionArrow.transform.position;
+        Vector3 endArrowPosition = new Vector3(selectionArrow.transform.position.x, farmButtons[newFarmIndex].transform.position.y, 0);
+
+        StartCoroutine(MoveSelectionArrow(startArrowPosition, endArrowPosition));
+    }
+
+    private IEnumerator MoveSelectionArrow(Vector3 start, Vector3 end)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / transitionDuration;
+            selectionArrow.transform.position = Vector3.Lerp(start, end, t);
+            yield return null;
+        }
+    }
+
+    private IEnumerator ScaleFarmDown(int farmIndex)
+    {
+        float elapsedTime = 0;
+        Transform currentFarm = farms[selectedFarmIndex];
+
+        Vector3 originalScale = currentFarm.localScale;
+        Vector3 targetScale = Vector3.zero;
+
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / transitionDuration;
+            currentFarm.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            yield return null;
+        }
+        farms[farmIndex].localScale = Vector3.one;
+    }
+
+    private IEnumerator ScaleFarmUp(int farmIndex)
+    {
+
+        Transform currentFarm = farms[selectedFarmIndex];
+        Vector3 originalScale = currentFarm.localScale;
+        Vector3 targetScale = new Vector3(2, 2, 2);
+        float elapsedTime = 0;
+        while (elapsedTime < transitionDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / transitionDuration;
+            currentFarm.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            yield return null;
+        }
+        farms[farmIndex].localScale = Vector3.one;
+    }
+
+    private void MoveCameraToFarm(int farmIndex)
+    {
+        float zOffset = -10 * (farmIndex + 1);
+        mainCamera.position = new Vector3(0, 0, zOffset);
+    }
+
+    void UpdateSelectedFarmImage()
+    {
+        selectedFarmImage.sprite = farmButtons[selectedFarmIndex].GetComponent<Image>().sprite;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*IEnumerator TransitionToFarm(int newFarmIndex)
     {
         // Hiển thị mũi tên chỉ vào farm đang được chọn
         selectionArrow.gameObject.SetActive(true);
@@ -117,26 +212,6 @@ public class FarmSwitcher : MonoBehaviour
         {
             mainCamera.position = new Vector3(0, 0, -30);
         }
-        
-
-        // Hiệu ứng phóng to farm mới hoặc thu nhỏ farm mới
-        /*elapsedTime = 0;
-        originalScale = (selectedFarmIndex < newFarmIndex) ? Vector3.zero : newFarm.localScale * 2;
-        targetScale = newFarm.localScale;
-
-        while (elapsedTime < transitionDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / transitionDuration;
-            newFarm.localScale = Vector3.Lerp(originalScale, targetScale, t);
-            yield return null;
-        }*/
 
         selectedFarmIndex = newFarmIndex;
-    }
-
-    void UpdateSelectedFarmImage()
-    {
-        selectedFarmImage.sprite = farmButtons[selectedFarmIndex].GetComponent<Image>().sprite;
-    }
-}
+    }*/

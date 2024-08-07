@@ -205,19 +205,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3261060}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow17
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3261060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,13 +597,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward17
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1223,13 +1211,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward11
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2422,81 +2410,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &77648761
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 77648762}
-  - component: {fileID: 77648764}
-  - component: {fileID: 77648763}
-  m_Layer: 5
-  m_Name: Arrow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &77648762
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77648761}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 783885553}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.11483, y: 3.9503613}
-  m_SizeDelta: {x: 7.32222, y: 5.28359}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &77648763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77648761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82e192726754c854180cb76a32f8f930, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &77648764
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77648761}
-  m_CullTransparentMesh: 1
 --- !u!1 &80639745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3399,13 +3312,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward15
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3642,7 +3555,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82e192726754c854180cb76a32f8f930, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5004e5c70efdbc46b739a67457024ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4220,19 +4133,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 137794594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow07
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &137794594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5459,19 +5360,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 164834806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow01
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &164834806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6528,13 +6417,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward06
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8244,6 +8133,7 @@ GameObject:
   - component: {fileID: 263226776}
   - component: {fileID: 263226775}
   - component: {fileID: 263226777}
+  - component: {fileID: 263226778}
   m_Layer: 5
   m_Name: BackGroundBottom
   m_TagString: Untagged
@@ -8337,6 +8227,19 @@ MonoBehaviour:
     cost: 700
     currentHat: 0
     hatUsed: 0
+  removeHatButton: {fileID: 611007683}
+--- !u!114 &263226778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263226773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a47818f8db6f4d479eed4b6ac2a460a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   costTexts:
   - {fileID: 1748854930}
   - {fileID: 2129715342}
@@ -8353,7 +8256,6 @@ MonoBehaviour:
   - {fileID: 362848352}
   - {fileID: 1578298559}
   - {fileID: 422916046}
-  removeHatButton: {fileID: 611007683}
 --- !u!1 &264124449
 GameObject:
   m_ObjectHideFlags: 0
@@ -10541,13 +10443,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward02
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11276,13 +11178,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward04
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12953,13 +12855,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward03
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13123,19 +13025,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 447737753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow13
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &447737753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15767,19 +15657,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 538139347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow15
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &538139347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16395,19 +16273,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 554639895}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow02
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &554639895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16606,13 +16472,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward13
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17114,6 +16980,10 @@ MonoBehaviour:
   buyBerryDeliveryBTN: {fileID: 299451607}
   buyMagnetBTN: {fileID: 502458958}
   buyEvolutionBar: {fileID: 1966630678}
+  priceUpgradeCrate: 300
+  priceUpgradeBerry: 400
+  priceUpgradeMagnet: 500
+  priceEvolutionBar: 600
 --- !u!114 &572459494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18829,42 +18699,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650894918}
   m_CullTransparentMesh: 1
---- !u!1 &651267161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 651267162}
-  m_Layer: 5
-  m_Name: Content
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &651267162
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 651267161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1338445698}
-  m_Father: {fileID: 1280728065}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 16, y: 31.455}
-  m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &653719101
 GameObject:
   m_ObjectHideFlags: 0
@@ -22437,172 +22271,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778052876}
   m_CullTransparentMesh: 1
---- !u!1 &783885552
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 783885553}
-  - component: {fileID: 783885556}
-  - component: {fileID: 783885555}
-  - component: {fileID: 783885554}
-  - component: {fileID: 783885557}
-  m_Layer: 5
-  m_Name: MenuMapDropdown
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &783885553
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783885552}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 77648762}
-  - {fileID: 1944875395}
-  - {fileID: 1875837048}
-  m_Father: {fileID: 977595721}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.9006, y: -36.61956}
-  m_SizeDelta: {x: 13.801, y: 46.21268}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &783885554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783885552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 783885555}
-  m_Template: {fileID: 1944875395}
-  m_CaptionText: {fileID: 0}
-  m_CaptionImage: {fileID: 1875837049}
-  m_Placeholder: {fileID: 0}
-  m_ItemText: {fileID: 0}
-  m_ItemImage: {fileID: 2085124539}
-  m_Value: 0
-  m_Options:
-    m_Options:
-    - m_Text: Map 0
-      m_Image: {fileID: 21300000, guid: 28a434b21265bcc41ab3367e1f9c609c, type: 3}
-    - m_Text: Map 1
-      m_Image: {fileID: 21300000, guid: edf6286dbdbc869489e34d6cfbe21764, type: 3}
-    - m_Text: Map 2
-      m_Image: {fileID: 21300000, guid: 457a251d014c8b44abda87154203de68, type: 3}
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 783885557}
-        m_TargetAssemblyTypeName: MenuMapDropDown, Assembly-CSharp
-        m_MethodName: SetMap
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_AlphaFadeSpeed: 0.15
---- !u!114 &783885555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783885552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &783885556
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783885552}
-  m_CullTransparentMesh: 1
---- !u!114 &783885557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783885552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ba6ebd11177cc24cb6a2a9099a2e621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 519420028}
-  menuDropDown: {fileID: 783885554}
 --- !u!1 &784615705
 GameObject:
   m_ObjectHideFlags: 0
@@ -25335,13 +25003,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward12
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27361,19 +27029,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 902336112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow06
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &902336112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28591,13 +28247,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward18
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -29779,7 +29435,6 @@ RectTransform:
   - {fileID: 774384886}
   - {fileID: 1893640615}
   - {fileID: 1486625222}
-  - {fileID: 783885553}
   - {fileID: 318506252}
   - {fileID: 976062206}
   - {fileID: 905143816}
@@ -29914,13 +29569,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward07
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -32165,13 +31820,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward09
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -35768,19 +35423,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1223776410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow05
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1223776410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36358,13 +36001,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward05
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -36908,19 +36551,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1252849566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow10
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1252849566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37285,96 +36916,6 @@ RectTransform:
   m_AnchoredPosition: {x: 730.0163, y: -53.102543}
   m_SizeDelta: {x: 87.39722, y: 0.0000076293945}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1280728064
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1280728065}
-  - component: {fileID: 1280728068}
-  - component: {fileID: 1280728067}
-  - component: {fileID: 1280728066}
-  m_Layer: 5
-  m_Name: Viewport
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1280728065
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280728064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 651267162}
-  m_Father: {fileID: 1944875395}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -8, y: 0}
-  m_SizeDelta: {x: 16, y: 31.454597}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1280728066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280728064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1280728067
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280728064}
-  m_CullTransparentMesh: 1
---- !u!114 &1280728068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280728064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
 --- !u!1 &1283963673
 GameObject:
   m_ObjectHideFlags: 0
@@ -38778,91 +38319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337462765}
   m_CullTransparentMesh: 1
---- !u!1 &1338445697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1338445698}
-  - component: {fileID: 1338445699}
-  m_Layer: 5
-  m_Name: Item
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1338445698
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338445697}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2085124538}
-  m_Father: {fileID: 651267162}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -6.2}
-  m_SizeDelta: {x: 10, y: 8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1338445699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338445697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2085124539}
-  toggleTransition: 1
-  graphic: {fileID: 0}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
 --- !u!1 &1342954771
 GameObject:
   m_ObjectHideFlags: 0
@@ -38874,6 +38330,7 @@ GameObject:
   - component: {fileID: 1342954772}
   - component: {fileID: 1342954774}
   - component: {fileID: 1342954773}
+  - component: {fileID: 1342954776}
   - component: {fileID: 1342954775}
   m_Layer: 5
   m_Name: AchievementUI
@@ -38953,10 +38410,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342954771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 205452dfbf08f0d4a8860ea65ca8057a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8df9160a145cde44c85b80fd0f2632df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageSuccess: []
+  achievementUI: {fileID: 1342954776}
+--- !u!114 &1342954776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342954771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985ec9f3bf765d2479fb404a837d2b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   getRewardBTN:
   - {fileID: 1839157510}
   - {fileID: 318857725}
@@ -38976,7 +38445,25 @@ MonoBehaviour:
   - {fileID: 1472634697}
   - {fileID: 23353069}
   - {fileID: 937523499}
-  amountDiamondsMission: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000
+  imageSuccess:
+  - {fileID: 2012127329}
+  - {fileID: 1836140052}
+  - {fileID: 342856893}
+  - {fileID: 75127051}
+  - {fileID: 1182688066}
+  - {fileID: 538652563}
+  - {fileID: 570839137}
+  - {fileID: 1776641138}
+  - {fileID: 974885641}
+  - {fileID: 1211712710}
+  - {fileID: 1680208302}
+  - {fileID: 1149433317}
+  - {fileID: 1202106070}
+  - {fileID: 1438589413}
+  - {fileID: 1759058880}
+  - {fileID: 281181347}
+  - {fileID: 1753177738}
+  - {fileID: 1486904459}
 --- !u!1 &1345944152
 GameObject:
   m_ObjectHideFlags: 0
@@ -40561,19 +40048,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1413942007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow14
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1413942007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42530,19 +42005,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1465700760}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow03
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1465700760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42666,13 +42129,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward16
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -43284,19 +42747,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481836764}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow18
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1481836764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46449,13 +45900,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward08
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -46583,13 +46034,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward14
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -50775,19 +50226,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1753760329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow04
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1753760329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50921,8 +50360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmSelectedUI: {fileID: 905143815}
-  arrowDownButton: {fileID: 0}
-  arrowUpButton: {fileID: 0}
+  arrowDownButton: {fileID: 2143636065}
+  arrowUpButton: {fileID: 116730414}
   farmMenu: {fileID: 1754968999}
   farmButtons:
   - {fileID: 54430506}
@@ -50934,6 +50373,7 @@ MonoBehaviour:
   - {fileID: 1708485807}
   - {fileID: 1311810584}
   - {fileID: 339639454}
+  isMenuOpen: 0
   selectedFarmImage: {fileID: 986545784}
 --- !u!114 &1754969002
 MonoBehaviour:
@@ -54158,19 +53598,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1838692648}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow12
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1838692648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54294,9 +53722,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward01
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -54992,19 +54420,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861496318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow16
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1861496318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55401,81 +54817,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870622188}
-  m_CullTransparentMesh: 1
---- !u!1 &1875837047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1875837048}
-  - component: {fileID: 1875837050}
-  - component: {fileID: 1875837049}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1875837048
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875837047}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 783885553}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.11482, y: -11.825}
-  m_SizeDelta: {x: 10.3755, y: 9.3781}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1875837049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875837047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28a434b21265bcc41ab3367e1f9c609c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1875837050
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875837047}
   m_CullTransparentMesh: 1
 --- !u!1 &1879955578
 GameObject:
@@ -56063,6 +55404,7 @@ GameObject:
   - component: {fileID: 1897832321}
   - component: {fileID: 1897832322}
   - component: {fileID: 1897832323}
+  - component: {fileID: 1897832324}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56082,38 +55424,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4e71dab0e495f4890a17f3da39557c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cow_Prefabs:
-  - {fileID: 4849275498206545121, guid: 423e68c6767db63438c00386e5f28b53, type: 3}
-  - {fileID: 4137505622309548318, guid: c71a25f8177ccb1429a7a6a3a6fc883f, type: 3}
-  - {fileID: 2357110687109141086, guid: d53f4de0aee27044e81c642e1503c2fc, type: 3}
-  - {fileID: 8649902226227301689, guid: cbf95db751f31cc4c99b9664c528ca42, type: 3}
-  - {fileID: 6782832825895591656, guid: 8c91d34c71adc444ba1b4d1ebf37df17, type: 3}
-  - {fileID: 470888951448433740, guid: 46f49c5605a9dc047b11022d7c88401f, type: 3}
-  - {fileID: 3624884905298393534, guid: 0c39a2b0bf0551349a49526ca3bd43e4, type: 3}
-  - {fileID: 3398001786972491952, guid: 0afaaf2a093738a418f827e18061fc9c, type: 3}
-  - {fileID: 6056131913553134233, guid: 07800aa4e3c94244c882357f69a467b3, type: 3}
-  - {fileID: 3943267298721633790, guid: 4e00bb3876128a746a1dd08507c92c5f, type: 3}
-  - {fileID: 3805440923620649384, guid: d56f89d8a8ce3fb41b38b3e155a91ea3, type: 3}
-  - {fileID: 1666270340770799105, guid: a1271e7ef6d6b9d48b8163546aac26a4, type: 3}
-  - {fileID: 1681480421113995844, guid: e71d4e9e327622642af1d2b024a04fa8, type: 3}
-  - {fileID: 7252671861948758682, guid: 6be5e342c85823c469e18a41fb678862, type: 3}
-  - {fileID: 1961545453514603162, guid: 071a9460bc6840d41a605647c5489c18, type: 3}
-  - {fileID: 2524090162047682537, guid: 3a6c8455199b4a94fb8413c6920548ed, type: 3}
-  - {fileID: 4958555290035951936, guid: b3aa2b1db8afc9244a61cf905a087222, type: 3}
-  - {fileID: 5781576799252619077, guid: d49d65bb67f20844fb1648573a2d1e75, type: 3}
-  crate_Prefab: {fileID: 4492259925537546375, guid: abefa5450eced1149bacc934cc86edc2, type: 3}
-  boxEvolutionBar_Prefab: {fileID: 4987639042673761874, guid: 4043e36f7dc84cc4bafe955b4dbb1077, type: 3}
-  treeBerry_Prefab:
-  - {fileID: 7157196086937440183, guid: 240bdf2a8f742124c932b3c92f470a93, type: 3}
-  - {fileID: 2873241122601497164, guid: d916276f8ec1767479c2593d89b75b92, type: 3}
-  - {fileID: 7434384518125170153, guid: 3ef05ddb91876a74c9a7bae29b432e19, type: 3}
-  - {fileID: 6787702729246623459, guid: b10f1f9990d422947b08b37de4dd812c, type: 3}
   newCowUI: {fileID: 587896476}
   newCowName: {fileID: 1560627092}
   newCowImg: {fileID: 700261170}
   fillCrateImage: {fileID: 836754901}
   fillTreeBerryImage: {fileID: 849755035}
-  fence: {fileID: 140146428}
   cow_Names:
   - Cow01
   - Cow02
@@ -56758,6 +56073,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab8d9d0bfae6394989d876264052899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1897832324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897832311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51796c211987ada449d98b57a001b240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crate_Prefab: {fileID: 4492259925537546375, guid: abefa5450eced1149bacc934cc86edc2, type: 3}
+  boxEvolutionBar_Prefab: {fileID: 4987639042673761874, guid: 4043e36f7dc84cc4bafe955b4dbb1077, type: 3}
+  cow_Prefabs:
+  - {fileID: 4849275498206545121, guid: 423e68c6767db63438c00386e5f28b53, type: 3}
+  - {fileID: 4137505622309548318, guid: c71a25f8177ccb1429a7a6a3a6fc883f, type: 3}
+  - {fileID: 2357110687109141086, guid: d53f4de0aee27044e81c642e1503c2fc, type: 3}
+  - {fileID: 8649902226227301689, guid: cbf95db751f31cc4c99b9664c528ca42, type: 3}
+  - {fileID: 6782832825895591656, guid: 8c91d34c71adc444ba1b4d1ebf37df17, type: 3}
+  - {fileID: 470888951448433740, guid: 46f49c5605a9dc047b11022d7c88401f, type: 3}
+  - {fileID: 3624884905298393534, guid: 0c39a2b0bf0551349a49526ca3bd43e4, type: 3}
+  - {fileID: 3398001786972491952, guid: 0afaaf2a093738a418f827e18061fc9c, type: 3}
+  - {fileID: 6056131913553134233, guid: 07800aa4e3c94244c882357f69a467b3, type: 3}
+  - {fileID: 3943267298721633790, guid: 4e00bb3876128a746a1dd08507c92c5f, type: 3}
+  - {fileID: 3805440923620649384, guid: d56f89d8a8ce3fb41b38b3e155a91ea3, type: 3}
+  - {fileID: 1666270340770799105, guid: a1271e7ef6d6b9d48b8163546aac26a4, type: 3}
+  - {fileID: 1681480421113995844, guid: e71d4e9e327622642af1d2b024a04fa8, type: 3}
+  - {fileID: 7252671861948758682, guid: 6be5e342c85823c469e18a41fb678862, type: 3}
+  - {fileID: 1961545453514603162, guid: 071a9460bc6840d41a605647c5489c18, type: 3}
+  - {fileID: 2524090162047682537, guid: 3a6c8455199b4a94fb8413c6920548ed, type: 3}
+  - {fileID: 4958555290035951936, guid: b3aa2b1db8afc9244a61cf905a087222, type: 3}
+  - {fileID: 5781576799252619077, guid: d49d65bb67f20844fb1648573a2d1e75, type: 3}
+  treeBerry_Prefab:
+  - {fileID: 7157196086937440183, guid: 240bdf2a8f742124c932b3c92f470a93, type: 3}
+  - {fileID: 2873241122601497164, guid: d916276f8ec1767479c2593d89b75b92, type: 3}
+  - {fileID: 7434384518125170153, guid: 3ef05ddb91876a74c9a7bae29b432e19, type: 3}
+  - {fileID: 6787702729246623459, guid: b10f1f9990d422947b08b37de4dd812c, type: 3}
+  fence: {fileID: 140146428}
 --- !u!1 &1900061477
 GameObject:
   m_ObjectHideFlags: 0
@@ -58378,113 +57732,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940258202}
-  m_CullTransparentMesh: 1
---- !u!1 &1944875394
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1944875395}
-  - component: {fileID: 1944875398}
-  - component: {fileID: 1944875397}
-  - component: {fileID: 1944875396}
-  m_Layer: 5
-  m_Name: Template
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1944875395
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944875394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1280728065}
-  m_Father: {fileID: 783885553}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.30855}
-  m_SizeDelta: {x: 0, y: -14.444}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1944875396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944875394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 651267162}
-  m_Horizontal: 0
-  m_Vertical: 1
-  m_MovementType: 2
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 1280728065}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 2
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: -3
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1944875397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944875394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1944875398
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944875394}
   m_CullTransparentMesh: 1
 --- !u!1 &1947393952
 GameObject:
@@ -60702,19 +59949,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2036847870}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow09
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2036847870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61825,81 +61060,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084744410}
-  m_CullTransparentMesh: 1
---- !u!1 &2085124537
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2085124538}
-  - component: {fileID: 2085124540}
-  - component: {fileID: 2085124539}
-  m_Layer: 5
-  m_Name: Item Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2085124538
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085124537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1338445698}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2085124539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085124537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2085124540
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085124537}
   m_CullTransparentMesh: 1
 --- !u!1 &2085195533
 GameObject:
@@ -63157,13 +62317,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1342954775}
-        m_TargetAssemblyTypeName: Achievement, Assembly-CSharp
-        m_MethodName: GetReward10
-        m_Mode: 1
+        m_TargetAssemblyTypeName: AchievementManager, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -63825,19 +62985,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2141172336}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479715423}
-        m_TargetAssemblyTypeName: ShopCow, Assembly-CSharp
-        m_MethodName: BuyCow11
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2141172336
 MonoBehaviour:
   m_ObjectHideFlags: 0
