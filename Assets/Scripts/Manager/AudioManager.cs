@@ -5,11 +5,35 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    private static AudioManager _instance;
+    public static AudioManager Instance
+    {
+        get 
+        { 
+            if(_instance == null)
+            {
+                _instance = FindObjectOfType<AudioManager>();
+                if(_instance == null)
+                {
+                    GameObject singleton = new GameObject(typeof(AudioManager).Name);
+                    _instance = singleton.AddComponent<AudioManager>();
+                }
+            }    
+            return _instance; 
+        }
+    }
 
     private void Awake()
     {
-        Instance = this;
+        if(_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     public AudioSource backgroundMusic, poopAudioSource, crateAudioSource , evolveAudioSource , closeAudioSource , spendAudioSource;
     public AudioClip poopAudioClip , crateAudioClip , evolveAudioClip , closeAudioClip , spendAudioClip , addCoinAudioClip;

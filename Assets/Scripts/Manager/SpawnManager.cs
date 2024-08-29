@@ -1,23 +1,52 @@
-
+﻿
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public static SpawnManager Instance;
+    
     public GameObject crate_Prefab, boxEvolutionBar_Prefab;
     public GameObject[] cow_Prefabs;
     public GameObject[] treeBerry_Prefab;
     public SpriteRenderer fence;
-    // Start is called before the first frame update
-    private void Awake()
+    private static SpawnManager _instance;
+
+    public static SpawnManager Instance
     {
-        Instance = this;
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<SpawnManager>();
+
+                if (_instance == null)
+                {
+                    GameObject singleton = new GameObject(typeof(SpawnManager).Name);
+                    _instance = singleton.AddComponent<SpawnManager>();
+                }
+            }
+            return _instance;
+        }
     }
 
-    
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     public void SpawnCow()
     {
         Vector3 position = new Vector3(Random.Range(fence.bounds.center.x - 3.3f, fence.bounds.center.x + 3f), Random.Range(fence.bounds.center.y - 4.5f, fence.bounds.center.y + 4.7f), 0);

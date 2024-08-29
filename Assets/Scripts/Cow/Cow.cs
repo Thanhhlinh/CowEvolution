@@ -12,21 +12,36 @@ public class Cow : MonoBehaviour, IDataPersistence
     public Poop poop;
     public PoopDiamond poopDiamond;
     public bool isDragged, hasDestination;
-    Vector3 offSet, destination;
+    public Vector3 offSet, destination;
 
     public bool eatBerry = false;
 
     private Coroutine poopCoroutine;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     public Transform hatPosition;
-    private GameObject currentHat;
+    public GameObject currentHat;
 
 
-    private IMoveable movement;
+    /*private IMoveable movement;*/
     private IPoopable pooping;
     private IHatManager hatManager;
+
+
+
+    StateBaseCow currentStateCow;
+    public CowIdleState idleState = new CowIdleState();
+    public CowMoveState moveState = new CowMoveState();
+
+
+    public void SwitchState(StateBaseCow state)
+    {
+        currentStateCow = state;
+        state.EnterState(this);
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +49,13 @@ public class Cow : MonoBehaviour, IDataPersistence
         AnimationCow();
         DataPersistenceManager.Instance.Register(this);
         spriteRenderer = GetComponent<SpriteRenderer>();
-        movement = new CowMovement(transform, spriteRenderer, hatPosition, currentHat, tier);
+        /*movement = new CowMovement(transform, spriteRenderer, hatPosition, currentHat, tier);*/
         pooping = new CowPooping(poop, poopDiamond, tier);
         hatManager = new CowHatManager(hatPosition, currentHat);
         SetCow();
+
+        currentStateCow = idleState;
+        currentStateCow.EnterState(this);
     }
 
     // Update is called once per frame
@@ -52,8 +70,7 @@ public class Cow : MonoBehaviour, IDataPersistence
             gameObject.GetComponent<SortingGroup>().sortingOrder = 2;
         }
 
-
-        if (!isDragged && hasDestination)
+        /*if (!isDragged && hasDestination)
         {
             if (Vector3.Distance(transform.position, destination) > 0.1f)
             {
@@ -65,29 +82,26 @@ public class Cow : MonoBehaviour, IDataPersistence
                 Take_Poop();
                 StartCoroutine(WaitPoop());
             }
-        }
-        /*else
-        {
-            SetRandomDestination();
         }*/
         CheckColor();
+        currentStateCow.UpdateState(this);
     }
-    IEnumerator WaitPoop()
+    /*IEnumerator WaitPoop()
     {
         yield return new WaitForSeconds(2f);
         SetRandomDestination();
     }
 
-    private void SetRandomDestination()
+    public void SetRandomDestination()
     {
         if (!hasDestination)
         {
             destination = GetRandomPosition();
             hasDestination = true;
         }
-    }
+    }*/
 
-    private Vector3 GetRandomPosition()
+    /*private Vector3 GetRandomPosition()
     {
         float x = Random.Range(SpawnManager.Instance.fence.bounds.center.x - 3.3f, SpawnManager.Instance.fence.bounds.center.x + 3f);
         float y = Random.Range(SpawnManager.Instance.fence.bounds.center.y - 4.5f, SpawnManager.Instance.fence.bounds.center.y + 4.7f);
@@ -103,7 +117,7 @@ public class Cow : MonoBehaviour, IDataPersistence
         {
             return new Vector3(x, y, 0);
         }
-    }
+    }*/
 
 
     public void AnimationCow()
@@ -198,7 +212,7 @@ public class Cow : MonoBehaviour, IDataPersistence
         GetComponent<SpriteRenderer>().sprite = GameManager.Instance.cow_Sprites[tier];
         UpdateICommand();
         hasDestination = false;
-        SetRandomDestination();
+        /*SetRandomDestination();*/
         GameManager.Instance.CheckTier(tier);
         UpdateHatOnLevelChange(tier);
         poopTier = tier;
@@ -316,7 +330,7 @@ public class Cow : MonoBehaviour, IDataPersistence
     private void UpdateICommand()
     {
         pooping = new CowPooping(poop, poopDiamond, tier);
-        movement = new CowMovement(transform, spriteRenderer, hatPosition, currentHat, tier);
+        /*movement = new CowMovement(transform, spriteRenderer, hatPosition, currentHat, tier);*/
         hatManager = new CowHatManager(hatPosition, currentHat);
     }
 

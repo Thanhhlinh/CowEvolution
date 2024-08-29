@@ -6,8 +6,31 @@ using UnityEngine.UI;
 using DG.Tweening;
 public class GameManager : MonoBehaviour,IDataPersistence
 {
-    public static GameManager Instance;
+    // Biến static lưu trữ instance duy nhất của GameManager
+    private static GameManager _instance;
 
+    // Thuộc tính để truy cập instance
+    public static GameManager Instance
+    {
+        get
+        {
+            // Nếu _instance chưa được khởi tạo, tìm kiếm nó trong scene
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<GameManager>();
+
+                // Nếu vẫn chưa tìm thấy, tạo mới đối tượng
+                if (_instance == null)
+                {
+                    GameObject singleton = new GameObject(typeof(GameManager).Name);
+                    _instance = singleton.AddComponent<GameManager>();
+                }
+            }
+            return _instance;
+        }
+    }
+
+    
     public GameObject newCowUI;
     public TextMeshProUGUI newCowName;
     public Image newCowImg;
@@ -44,11 +67,23 @@ public class GameManager : MonoBehaviour,IDataPersistence
     public GameObject evolutionBarUI;
 
     public bool[] mission;
+
+
+    // Đảm bảo rằng instance này không bị phá hủy khi tải scene mới
     private void Awake()
     {
-        Instance = this;
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         Application.targetFrameRate = 60;
     }
+
     // Start is called before the first frame update
     void Start()
     {
