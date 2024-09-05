@@ -22,22 +22,30 @@ public class Upgrades : MonoBehaviour
     private IUpgradeStrategy magnetUpgradeStrategy;
     private IUpgradeStrategy evolutionBarUpgradeStrategy;
 
-    private void Start()
+    private void Awake()
     {
-        gameManager = GameManager.Instance;
-        audioManager = AudioManager.Instance;
         crateUpgradeStrategy = new CrateUpgradeStrategy(this);
         berryDeliveryUpgradeStrategy = new BerryDeliveryUpgradeStrategy(this);
         magnetUpgradeStrategy = new MagnetUpgradeStrategy(this);
         evolutionBarUpgradeStrategy = new EvolutionBarUpgradeStrategy(this);
+        Subject.AddObserver("UpdateUI", onUpdateUI);
     }
-    void Update()
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+        audioManager = AudioManager.Instance;
+        
+    }
+
+    private void onUpdateUI()
     {
         crateUpgradeStrategy.UpdateUI();
         berryDeliveryUpgradeStrategy.UpdateUI();
         magnetUpgradeStrategy.UpdateUI();
         evolutionBarUpgradeStrategy.UpdateUI();
-
+    }
+    void Update()
+    {
         if (gameManager.boughtMagnet)
         {
             magnetUI.SetActive(true);

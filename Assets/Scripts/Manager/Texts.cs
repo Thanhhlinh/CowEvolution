@@ -15,13 +15,13 @@ public class Texts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Subject.NotifyObservers("UpdateUI");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void ChangeTextCoins(int amount)

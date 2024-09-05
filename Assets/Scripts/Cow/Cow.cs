@@ -55,7 +55,6 @@ public class Cow : MonoBehaviour, IDataPersistence
         SetCow();
 
         currentStateCow = idleState;
-        currentStateCow.EnterState(this);
     }
 
     // Update is called once per frame
